@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import { selectUsers } from "../redux/user/user.selector";
 import { useEffect, useState } from "react";
-import { updateUser } from "../redux/user/user.slice";
+import { updateUser, updateUserRequest } from "../redux/user/user.slice";
 
 
 const EditUser =()=> {
@@ -24,7 +24,7 @@ const EditUser =()=> {
     }
     const handleSubmit = e => {
         e.preventDefault();
-        dispatch(updateUser({ ...formData, id: id }));
+        dispatch(updateUserRequest({ ...formData, id: id }));
         navigate('/');
       };
 

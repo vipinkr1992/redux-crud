@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux"
 import { selectError, selectLoading, selectUsers } from "../redux/user/user.selector";
 import { useEffect } from "react";
-import { deleteUser, fetchUsers } from "../redux/user/user.slice";
+import { deleteUser, deleteUserRequest, fetchUsers, fetchUsersRequest } from "../redux/user/user.slice";
 import { Link } from 'react-router-dom';
 
 const UserList = () => {
@@ -11,11 +11,11 @@ const UserList = () => {
     const error = useSelector(selectError);
 
     useEffect(()=>{
-        dispatch(fetchUsers());
+        dispatch(fetchUsersRequest());
     },[dispatch])
 
     const handleDelete = (id) => {
-        dispatch(deleteUser(id));
+        dispatch(deleteUserRequest(id));
       };
 
     if (loading) return <p>Loading...</p>;

@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { addUser } from "../redux/user/user.slice";
+import { addUser, addUserRequest } from "../redux/user/user.slice";
 
 
 const CreateUser = () => {
@@ -16,7 +16,7 @@ const CreateUser = () => {
 
     const handleSubmit = e => {
         e.preventDefault();
-        dispatch(addUser(formData));
+        dispatch(addUserRequest(formData));
         navigate('/');
     }
 
