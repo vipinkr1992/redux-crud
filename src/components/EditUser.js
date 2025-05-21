@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import { selectUsers } from "../redux/user/user.selector";
 import { useEffect, useState } from "react";
-import { updateUser } from "../redux/user/user.action";
+import { updateUser } from "../redux/user/user.slice";
 
 
 const EditUser =()=> {

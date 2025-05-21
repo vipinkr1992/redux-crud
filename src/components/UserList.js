@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux"
 import { selectError, selectLoading, selectUsers } from "../redux/user/user.selector";
 import { useEffect } from "react";
-import { deleteUser, fetchUsers } from "../redux/user/user.action";
+import { deleteUser, fetchUsers } from "../redux/user/user.slice";
 import { Link } from 'react-router-dom';
 
 const UserList = () => {
